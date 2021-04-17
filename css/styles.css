@@ -126,6 +126,7 @@ margin-bottom: 12px;
   bottom: 11px;
   left: 12px;
   fill: var(--color-btn);
+  transition: fill 250ms var(--time-function)
 }
 
 .form-item {
@@ -151,6 +152,7 @@ margin-bottom: 12px;
   border-radius: 4px;
   padding: 0 42px;
   resize: none;
+  transition: border 250ms var(--time-function)
 }
 
 textarea.form-input {
@@ -172,7 +174,6 @@ textarea.form-input {
 }
 
 .agree {
-  text-align: center;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.71;
@@ -183,19 +184,34 @@ textarea.form-input {
 }
 
 .agree input {
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.agree-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agree-icon {
+  border: 2px solid black;
+  border-radius: 2px;
+  fill: #fff;
   margin-right: 8px;
 }
 
-.frame {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 15px;
-  border: 2px solid black;
-  border-radius: 2px;
+.agree-checkbox:focus + .agree-label .agree-icon {
+  border: 2px solid var(--accent-color-text)
 }
+
+.agree-checkbox:checked + .agree-label .agree-icon {
+  background-color: var(--accent-color-text);
+  border: 2px solid var(--accent-color-text)
+}
+
 
 .agree a {
   color: var(--accent-color-text)
@@ -232,14 +248,16 @@ form .hero-btn:active {
   cursor: pointer;
 }
 
+.btn-close .icon {
+  fill: #000;
+  transition: fill 250ms var(--time-function)
+}
+
 .btn-close:hover .icon,
 .btn-close:focus .icon {
   fill: var(--accent-color-text)
 }
 
-.close .icon {
-  margin: 0;
-}
 
 /* header */
 .part-of-logo {
@@ -635,7 +653,6 @@ header {
   display: flex;
   align-items: center;
   padding: 0 24px;
-  background-color: ;
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;

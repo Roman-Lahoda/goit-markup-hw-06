@@ -386,13 +386,14 @@
                     <textarea class="form-input" name="coment" id="coment" cols="3" rows="10" placeholder="Введите текст"></textarea>
                 </div>
                 <div class="agree">
-                    <input type="checkbox" name="agree" id="agree" required>
-                    <label for="agree">Соглашаюсь с рассылкой и принимаю</label>
-                    <a href=""> Условия договора</a>
-                    <!-- <div class="frame"></div>
-                    <svg class="modal-icon" width="16" height="15">
-                        <use href="./images/icons/icons.svg#icon-check"></use>
-                    </svg> -->
+                    <input class="agree-checkbox" type="checkbox" name="agree" id="agree" required>
+                    <label class="agree-label" for="agree">
+                        <svg class="agree-icon" width="16" height="15">
+                            <use href="./images/icons/icons.svg#icon-check"></use>
+                        </svg>
+                        <span>Соглашаюсь с рассылкой и принимаю <a href="" target="_blank">Условия договора</a></span>
+                    </label>
+                    
                 </div>
                 <button class="hero-btn" type="submit">Отправить</button>
             </form>
